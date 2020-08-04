@@ -1,0 +1,9 @@
+
+config MTK_BMI160
+	bool "Bosch BMI160 for MediaTek package"
+	default n
+	help
+	  It support different accelerometer sensor.
+          If this option is set,
+	  it will support
+          BMI160 Accelerometer.

@@ -1,0 +1,5 @@
+---- assert Matches (0 in 0 files) ----
+---- assert Search Errors Encountered (2) ----
+The following 2 files could not be processed:
+Z:\MTK6753\qc\qc_bootimage_build\kernel-3.10\drivers\misc\mediatek\nutlet_linuxdriver\armtz\libopensslrsa\rsagenkey_extract.IAB : File could not be opened.
+Z:\MTK6753\qc\qc_bootimage_build\kernel-3.10\drivers\misc\mediatek\nutlet_linuxdriver\armtz\libopensslrsa\rsagenkey_extract.IMB : File could not be opened.

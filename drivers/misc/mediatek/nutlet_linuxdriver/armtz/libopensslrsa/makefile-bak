@@ -1,0 +1,30 @@
+CC = gcc
+CFLAGS = -Wall -O -g
+OBJS=	bn_add.o bn_div.o bn_exp.o bn_lib.o bn_ctx.o bn_mul.o bn_mod.o \
+	bn_print.o  buf_str.o bn_rand.o bn_shift.o bn_word.o \
+	bn_kron.o bn_sqrt.o bn_gcd.o bn_prime.o bn_sqr.o bn_asm.o \
+	bn_recp.o bn_mont.o \
+	err.o  mem.o \
+	rsa_lib.o rsa_gen_prime.o 
+#CC = aarch64-linux-android-gcc
+#AR = aarch64-linux-android-ar
+
+all:$(OBJS)
+	$(CC) $(OBJS) -o RsaExtract
+
+$(OBJS):%.o: %.c	
+	$(CC) -c $(CFLAGS) $< -o $@
+	
+#rsagenkey.o: rsagenkey.c rsa.h bignum.h
+#	$(CC) -c rsagenkey.c
+#rsa.o: rsa.c rsa.h config.h 
+#	$(CC) -c rsa.c
+#bignum.o: bignum.c bignum.h config.h bn_mul.h
+#	$(CC) -c bignum.c
+
+#	$(AR) -r rsa_gen_key.a rsagenkey.o rsa.o bignum.o
+
+	
+.PHONY : clean
+clean:
+	rm -rf *.o *.a RsaExtract

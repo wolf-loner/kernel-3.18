@@ -1,0 +1,47 @@
+/*
+
+ */
+
+/*************************
+ * I2C dtsi file
+*************************/
+&i2c0 {
+	synaptics_dsx@70 {
+		compatible = "mediatek,synaptics_dsx";
+		reg = <0x70>;
+		rst-gpio = <&pio 158 0>;
+		int-gpio = <&pio 1 0>;
+		interrupt-parent = <&eintc>;
+		interrupts = <1 2>;
+		debounce = <10 0>;
+		ldo-gpio = <&pio 12 0>;
+	};
+	
+	focal_touch@38 {
+		compatible = "mediatek,focal_touch";
+		reg = <0x38>;
+		rst-gpio = <&pio 10 0>;
+		int-gpio = <&pio 1 0>;
+		interrupt-parent = <&eintc>;
+		interrupts = <1 2>;
+		debounce = <10 0>;
+		avdd_regulator-supply = <&mt_pmic_vldo28_ldo_reg>;
+	};
+};
+&i2c1 {
+	camera_sub@10 {
+		compatible = "mediatek,camera_sub";
+		reg = <0x10>;
+	};
+};
+&i2c2 {
+		camera_main@2d {
+		compatible = "mediatek,camera_main";
+		reg = <0x2d>;
+	};
+
+	camera_main_af@18 {
+		compatible = "mediatek,camera_main_af";
+		reg = <0x18>;
+	};
+};
